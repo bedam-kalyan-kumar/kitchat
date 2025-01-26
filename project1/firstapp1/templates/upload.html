@@ -1,8 +1,0 @@
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    <label for="profile_picture">Profile Picture:</label>
-    <input type="file" name="profile_picture" id="profile_picture" required>
-    <button type="submit">Upload</button>
-</form>
