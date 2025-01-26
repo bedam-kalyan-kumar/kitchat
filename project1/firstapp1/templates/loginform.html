@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            width: 400px;
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 0 0 25px rgba(0, 0, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.6);
+            text-align: center;
+            position: relative;
+            border: 2px solid rgba(0, 255, 0, 0.6);
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 15px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 0, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(0, 255, 0, 0.8), 0 0 40px rgba(0, 0, 255, 0.6), 0 0 50px rgba(255, 0, 255, 0.8);
+            }
+        }
+
+        .icon-and-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .icon-container {
+            width: 50px;
+            height: 50px;
+            background: #1a1a1a;
+            border: 3px solid #00ffff;
+            border-radius: 15px; /* Outer square */
+            box-shadow: 0 0 10px #00ffff, 0 0 15px #ff00ff, 0 0 20px #ff0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .circle {
+            width: 35px;
+            height: 35px;
+            background: #1a1a1a;
+            border: 2px solid #ff00ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px #ff00ff, 0 0 15px #00ffff, 0 0 20px #ff0000;
+        }
+
+        .outer-k {
+            font-size: 16px;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+            position: relative;
+        }
+
+        .inner-k {
+            font-size: 10px;
+            font-weight: bold;
+            color: #ff00ff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+        }
+
+        .header {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            background: #1a1a1a;
+            border: 2px solid rgba(0, 255, 255, 0.4);
+            border-radius: 25px;
+            padding: 0 20px;
+            font-size: 14px;
+            color: #ffffff;
+            outline: none;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .input-box input:focus {
+            border-color: rgba(0, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        .input-box .material-icons {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #00ffff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .input-box .material-icons:hover {
+            color: rgba(0, 255, 255, 0.8);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .remember-forgot a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ff0000);
+            color: #1a1a1a;
+            border: 2px solid #00ffff;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ff0000);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.6);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        footer a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="icon-and-header">
+            <!-- Icon with two "K"s inside a circle and a square -->
+            <div class="icon-container">
+                <div class="circle">
+                    <div class="outer-k">K
+                        <div class="inner-k">K</div>
+                    </div>
+                </div>
+            </div>
+            <div class="header">KITCHAT</div>
+        </div>
+        <form method="POST" action="{% url 'loginsuccess' %}">
+            {% csrf_token %}
+            <div class="input-box">
+                <input type="text" name="username" id="username1" placeholder="Enter your username" required minlength="8">
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" id="password1" placeholder="Enter your password" required minlength="8">
+                <span class="material-icons" id="visibility" onclick="visibility1()">visibility_off</span>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" name="check"> Remember me
+                </label>
+                <a href="{% url 'forget' %}">Forgot Password?</a>
+            </div>
+            <button type="submit" class="button">Login</button>
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <footer>
+                Not registered yet? <a href="{% url 'register' %}">Register account</a>
+            </footer>
+        </form>
+    </div>
+
+    <script>
+        function visibility1() {
+            const eye = document.getElementById('password1');
+            const eyeon = document.getElementById('visibility');
+            if (eye.type === "password") {
+                eye.type = "text";
+                eyeon.textContent = "visibility";
+            } else {
+                eye.type = "password";
+                eyeon.textContent = "visibility_off";
+            }
+        }
+    </script>
+</body>
+</html>
